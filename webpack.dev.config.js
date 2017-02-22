@@ -170,6 +170,10 @@ module.exports = {
 			filename: 'vendor.js' //公共模块的名字，默认是=name（vendor.js)，否则修改
 			// names: ['vendor','main'] // 把公共模块一步一步往后放，然后都在'main'模块中
 		}),
+		
+		// 热更新需要，不然需要给 commonsChunkPlugin({name: 'vendor-chunk'}),设置一个另外的名字，
+		// 不然会替换原来的vnedor.js，导致不能热更新（大概是更新的代码在vendor.js里面吧）
+		new webpack.HotModuleReplacementPlugin(),
 
 		// new extractTextPlugin({
 		// 	//每一个入口文件生成一个css文件，所以每个入口不要有相同的样式模块
