@@ -7,3 +7,5 @@ npm install
 npm start
 <br/>
 npm run build
+
+update readme
